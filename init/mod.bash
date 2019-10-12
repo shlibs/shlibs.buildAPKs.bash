@@ -72,7 +72,7 @@ export NUM="$(date +%s)"
 export JDR="$RDR/sources/$JID"
 . "$RDR"/scripts/bash/shlibs/lock.bash 
 . "$RDR"/scripts/bash/shlibs/buildAPKs/bnchn.bash bch.st 
-. "$RDR"/scripts/bash/shlibs/buildAPKs/build.andm.bash 
+. "$RDR"/scripts/bash/shlibs/buildAPKs/fandm.bash 
 if [[ -f "$JDR/.git" ]] # file exists in job directory
 then # print modules message
 	_PRINTNMODS_
