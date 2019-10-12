@@ -57,6 +57,10 @@ _AFR_ () { # finds and removes superfluous directories and files
 	printf "\\e[?25h\\n\\e[1;48;5;108mBuildAPKs %s\\e[0m\\n" "${0##*/} prep.bash: DONE!"
 }
 
+if [[ -z "${SFX:-}" ]]
+then
+	SFX=""
+fi
 declare -a DLIST # declare array for all superfluous directories
 declare -a FLIST # declare array for all superfluous files
 DLIST=(".idea" "bin" "gradle")
