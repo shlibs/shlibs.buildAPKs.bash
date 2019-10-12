@@ -38,9 +38,7 @@ trap _SPREPTRPQUIT_ QUIT
 _IAR_ () { 
 	if [[ -z "${1:-}" ]]
 	then
-		WDIR="$JDR$SFX"
-	else
-		WDIR="$1"
+		WDIR="$JDR/$SFX"
 	fi
 	_AFR_ || printf "%s ERROR: Continuing...\\n" "${0##*/}"
 }
