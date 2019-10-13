@@ -97,7 +97,7 @@ SIAD="https://github.com"
 cd "$RDR/"
 if [[ ! -f "$RDR/scripts/bash/shlibs/.git" ]]
 then
-	(printf "\\e[1;7;38;5;96m%s\\e[0m\\n" "Updating ~/$RDR, ~/$RDR/scripts/bash/shlibs and ~/$RDR/scripts/bash/shlibs/buildAPKs..." && git pull && git submodule add "$SIAD"/shlibs/shlibs.bash scripts/bash/shlibs && _GSUSHLIBS_ ) ||  (printf "\\e[1;7;38;5;66m%s\\e[0m\\n" "Cannot update ~/$RDR, ~/$RDR/scripts/bash/shlibs and ~/$RDR/scripts/bash/shlibs/buildAPKs: Continuing...")
+	(printf "\\e[1;7;38;5;96m%s\\e[0m\\n" "Updating ~/${RDR##*/}, ~/${RDR##*/}/scripts/bash/shlibs and ~/${RDR##*/}/scripts/bash/shlibs/buildAPKs..." && git pull && git submodule add "$SIAD"/shlibs/shlibs.bash scripts/bash/shlibs && _GSUSHLIBS_ ) ||  (printf "\\e[1;7;38;5;66m%s\\e[0m\\n" "Cannot update ~/${RDR##*/}, ~/${RDR##*/}/scripts/bash/shlibs and ~/${RDR##*/}/scripts/bash/shlibs/buildAPKs: Continuing...")
 fi
 . "$RDR"/scripts/bash/shlibs/buildAPKs/prep.bash
 if [[ ! -d "$RDR/sources" ]]
