@@ -77,7 +77,7 @@ _GSMU_() {
 		_GSU_ 
 		if [[ -f "$RDR/$LOC/.gitmodules" ]] || [[ -f "$RDR/$LOC/ma.bash" ]]
 		then
-			_AFR_ "$RDR/$LOC/"
+			_IAR_ "$RDR/$LOC/"
 		fi
 	done
 }
