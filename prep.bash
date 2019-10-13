@@ -55,13 +55,13 @@ _AFR_ () { # finds and removes superfluous directories and files
 	printf "\\e[?25h\\n\\e[1;48;5;109mBuildAPKs %s\\e[0m\\n" "${0##*/} prep.bash: Purging excess elements from directory $WDIR:  Please wait a moment..."
 	for NAME in "${DLIST[@]}"
 	do
- 		find "$WDIR" -type d -name "$NAME" -exec rm -rf {} \; 2>/dev/null || printf "%s ERROR: Continuing...\\n" "${0##*/}"
+ 		find "$WDIR" -type d -name "$NAME" -exec rm -rf {} \; 2>/dev/null || printf "%s prep.bash ERROR: Continuing...\\n" "${0##*/}"
 	done
 	for NAME in "${FLIST[@]}"
 	do
- 		find "$WDIR" -type f -name "$NAME" -delete || printf "%s ERROR: Continuing...\\n" "${0##*/}"
+ 		find "$WDIR" -type f -name "$NAME" -delete || printf "%s prep.bash ERROR: Continuing...\\n" "${0##*/}"
 	done
-	find  "$WDIR" -type d -empty -delete || printf "%s ERROR: Continuing...\\n" "${0##*/}" 
+	find  "$WDIR" -type d -empty -delete || printf "%s prep.bash ERROR: Continuing...\\n" "${0##*/}" 
 	printf "\\e[?25h\\n\\e[1;48;5;108mBuildAPKs %s\\e[0m\\n" "${0##*/} prep.bash: DONE!"
 }
 
