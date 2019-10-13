@@ -48,6 +48,10 @@ _IAR_ () {
 }
 
 _AFR_ () { # finds and removes superfluous directories and files
+	if [[ -z "${WDIR:-}" ]]
+	then
+		WDIR="$1"
+	fi
 	printf "\\e[?25h\\n\\e[1;48;5;109mBuildAPKs %s\\e[0m\\n" "${0##*/} prep.bash: Purging excess elements from directory $WDIR:  Please wait a moment..."
 	for NAME in "${DLIST[@]}"
 	do
