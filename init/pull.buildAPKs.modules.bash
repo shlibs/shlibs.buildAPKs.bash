@@ -71,7 +71,7 @@ _GSA_() { # update submodules to latest version
 }
 
 _GSMU_() {	
-	printf "\\e[1;7;38;5;114mUpdating buildAPKs; \`%s\` shall attempt to load sources from Github submodule repositories into ~/%s.  This may take a little while to complete.  Please be patient while \`%s\` downloads source code from %s:\\e[0m\\n" "${0##*/}" "${RDR##*/}" "${0##*/}" "$SIAD"
+	printf "\\e[1;7;38;5;114mUpdating buildAPKs; \\e[1;7;38;5;112m%s\\e[1;7;38;5;114m shall attempt to load sources from Github submodule repositories into \\e[1;7;38;5;116m~/%s\\e[1;7;38;5;114m.  This may take a little while to complete.  Please be patient while \\e[1;7;38;5;112m%s\\e[1;7;38;5;114m downloads source code from \\e[1;7;38;5;116m%s:\\e[0m\\n" "${0##*/}" "${RDR##*/}" "${0##*/}" "$SIAD"
 	for LOC in "${!GBMS[@]}" 
 	do
 		_GSU_ 
