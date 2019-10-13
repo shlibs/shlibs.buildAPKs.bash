@@ -36,6 +36,10 @@ trap _SPREPTRPSIGNAL_ HUP INT TERM
 trap _SPREPTRPQUIT_ QUIT
 
 _IAR_ () { 
+	if [[ -z "${SFX:-}" ]]
+	then
+		SFX=""
+	fi
 	if [[ -z "${WDIR:-}" ]]
 	then
 		WDIR="$JDR/$SFX"
