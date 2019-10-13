@@ -44,7 +44,7 @@ _IAR_ () {
 	then
 		WDIR="$JDR/$SFX"
 	fi
-	_AFR_ || printf "%s prep.bash WARNING: Continuing...\\n" "${0##*/}"
+	_AFR_ || printf "%s prep.bash WARNING: Could not process _AFR_; Continuing...\\n" "${0##*/}"
 }
 
 _AFR_ () { # finds and removes superfluous directories and files
@@ -55,14 +55,14 @@ _AFR_ () { # finds and removes superfluous directories and files
 	printf "\\e[?25h\\n\\e[1;48;5;109mBuildAPKs %s\\e[0m\\n" "${0##*/} prep.bash: Purging excess elements from directory $WDIR:  Please wait a moment..."
 	for NAME in "${DLIST[@]}"
 	do
- 		find "$WDIR" -type d -name "$NAME" -exec rm -rf {} \; 2>/dev/null || printf "%s prep.bash WARNING: Continuing...\\n" "${0##*/}"
+ 		find "$WDIR" -type d -name "$NAME" -exec rm -rf {} \; 2>/dev/null || printf "%s prep.bash WARNING: Could not process %s; Continuing...\\n" "${0##*/}" "$NAME" 
 	done
 	for NAME in "${FLIST[@]}"
 	do
- 		find "$WDIR" -type f -name "$NAME" -delete || printf "%s prep.bash WARNING: Continuing...\\n" "${0##*/}"
+ 		find "$WDIR" -type f -name "$NAME" -delete || printf "%s prep.bash WARNING: Could not process %s; Continuing...\\n" "${0##*/}" "$NAME"
 	done
-	find  "$WDIR" -type d -empty -delete || printf "%s prep.bash WARNING: Continuing...\\n" "${0##*/}" 
-	printf "\\e[?25h\\n\\e[1;48;5;108mBuildAPKs %s\\e[0m\\n" "${0##*/} prep.bash: DONE!"
+	find  "$WDIR" -type d -empty -delete || printf "%s prep.bash WARNING: Could not process %s; Continuing...\\n" "${0##*/}" "empty directories"
+	printf "\\e[?25h\\n\\e[1;48;5;108mBuildAPKs %s\\e[0m\\n" "${0##*/} prep.bash $WDIR: DONE!"
 }
 
 declare -a DLIST # declare array for all superfluous directories
