@@ -1,4 +1,4 @@
-# Currently Depreciated in Favor of https://github.com/shlibs/shlibs.bash/tree/master/buildAPKs
+# Depreciated in Favor of https://github.com/shlibs/shlibs.bash/tree/master/buildAPKs
 
 ## [Shared buildAPKs BASH Shell Scripts](https://github.com/shlibs/shlibs.buildAPKs.bash) 
 
